@@ -1086,9 +1086,9 @@ thisLevel = level()
 thisLevel.LoadLevel(3)
 thisGame.SetMode(2)
 
-print(AIghost.x, AIghost.y)
-print(player.x, player.y)
-print(thisGame.mode)
+# print(AIghost.x, AIghost.y)
+# print(player.x, player.y)
+# print(thisGame.mode)
 while True:
     player.nearestRow = int(((player.y + 8) / 16))
     player.nearestCol = int(((player.x + 8) / 16))
@@ -1106,7 +1106,7 @@ while True:
     if thisGame.mode == 2:
         AIghost.Move()
     AIghost.Draw()
-    print(len(AIghost.currentPath), AIghost.cost)
+    # print(len(AIghost.currentPath), AIghost.cost)
     DrawCost()
     pygame.display.flip()
 
