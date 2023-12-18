@@ -235,8 +235,10 @@ class path_finder:
 
     def CalcH(self, val):
         row, col = val
-        self.map[self.Unfold(row, col)].h = abs(col - self.end[0])
-        # +abs(col - self.end[0])
+        self.map[self.Unfold(row, col)].h = abs(row - self.end[0]) + abs(
+            col - self.end[0]
+        )
+        # self.map[self.Unfold(row, col)].h = abs(row - self.end[0])
 
     def CalcF(self, val):
         row, col = val
@@ -768,7 +770,7 @@ AIghost = ghost(1)
 
 thisGame = game()
 thisLevel = level()
-thisLevel.LoadLevel(2)
+thisLevel.LoadLevel(1)
 thisGame.SetMode(2)
 
 # print(AIghost.x, AIghost.y)
@@ -791,7 +793,7 @@ while True:
     if thisGame.mode == 2:
         AIghost.Move()
     AIghost.Draw()
-    # print(len(AIghost.currentPath), AIghost.cost)
+    # print((AIghost.currentPath))
     DrawCost()
     pygame.display.flip()
 
